@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.iali.httplookup</string>
+	<key>connections</key>
+	<dict>
+		<key>FEB552C9-211E-42CC-824B-3DFF7E151831</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9C6AE0A0-72C9-4A01-88BA-89919BC9EE22</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>46E7215A-CB22-4C55-A2FD-3242D48D0C25</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>View the http.cat meme</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>iAli</string>
+	<key>description</key>
+	<string>Look up HTTP status codes with Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>HTTP Lookup</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>function run() {
+  return JSON.stringify({
+    items: [
+    {
+      "title": "100 Continue",
+      "subtitle": "Request headers received; continue sending the request.",
+      "arg": "100"
+    },
+    {
+      "title": "101 Switching Protocols",
+      "subtitle": "Server agrees to switch to a different protocol.",
+      "arg": "101"
+    },
+    {
+      "title": "102 Processing",
+      "subtitle": "Server is still processing the request.",
+      "arg": "102"
+    },
+    {
+      "title": "103 Early Hints",
+      "subtitle": "Provides preliminary headers before the final response.",
+      "arg": "103"
+    },
+    {
+      "title": "200 OK",
+      "subtitle": "Request completed successfully.",
+      "arg": "200"
+    },
+    {
+      "title": "201 Created",
+      "subtitle": "Request succeeded and created a new resource.",
+      "arg": "201"
+    },
+    {
+      "title": "202 Accepted",
+      "subtitle": "Request accepted for processing, but not yet completed.",
+      "arg": "202"
+    },
+    {
+      "title": "203 Non-Authoritative Information",
+      "subtitle": "Response contains modified information from another source.",
+      "arg": "203"
+    },
+    {
+      "title": "204 No Content",
+      "subtitle": "Request succeeded with no response content.",
+      "arg": "204"
+    },
+    {
+      "title": "205 Reset Content",
+      "subtitle": "Request succeeded; client should reset the current view.",
+      "arg": "205"
+    },
+    {
+      "title": "206 Partial Content",
+      "subtitle": "Server returned only the requested portion of the resource.",
+      "arg": "206"
+    },
+    {
+      "title": "207 Multi-Status",
+      "subtitle": "Multiple resources have individual status results.",
+      "arg": "207"
+    },
+    {
+      "title": "208 Already Reported",
+      "subtitle": "Resource was already included in an earlier response.",
+      "arg": "208"
+    },
+    {
+      "title": "226 IM Used",
+      "subtitle": "Server fulfilled a request using instance manipulations.",
+      "arg": "226"
+    },
+    {
+      "title": "300 Multiple Choices",
+      "subtitle": "Multiple representations are available for the resource.",
+      "arg": "300"
+    },
+    {
+      "title": "301 Moved Permanently",
+      "subtitle": "Resource has permanently moved to a new URL.",
+      "arg": "301"
+    },
+    {
+      "title": "302 Found (Previously \"Moved Temporarily\")",
+      "subtitle": "Resource is temporarily available at another URL.",
+      "arg": "302"
+    },
+    {
+      "title": "303 See Other",
+      "subtitle": "Client should retrieve the resource from another URL.",
+      "arg": "303"
+    },
+    {
+      "title": "304 Not Modified",
+      "subtitle": "Resource has not changed since the last request.",
+      "arg": "304"
+    },
+    {
+      "title": "305 Use Proxy",
+      "subtitle": "Resource must be accessed through the specified proxy.",
+      "arg": "305"
+    },
+    {
+      "title": "306 Switch Proxy",
+      "subtitle": "Unused status code that was previously defined for proxy switching.",
+      "arg": "306"
+    },
+    {
+      "title": "307 Temporary Redirect",
+      "subtitle": "Temporarily redirect to another URL without changing the method.",
+      "arg": "307"
+    },
+    {
+      "title": "308 Permanent Redirect",
+      "subtitle": "Permanently redirect to another URL without changing the method.",
+      "arg": "308"
+    },
+    {
+      "title": "400 Bad Request",
+      "subtitle": "Server cannot understand or process the request.",
+      "arg": "400"
+    },
+    {
+      "title": "401 Unauthorized",
+      "subtitle": "Authentication is required or has failed.",
+      "arg": "401"
+    },
+    {
+      "title": "402 Payment Required",
+      "subtitle": "Reserved for payment-related requirements.",
+      "arg": "402"
+    },
+    {
+      "title": "403 Forbidden",
+      "subtitle": "Server understood the request but refuses access.",
+      "arg": "403"
+    },
+    {
+      "title": "404 Not Found",
+      "subtitle": "Requested resource could not be found.",
+      "arg": "404"
+    },
+    {
+      "title": "405 Method Not Allowed",
+      "subtitle": "HTTP method is not supported for this resource.",
+      "arg": "405"
+    },
+    {
+      "title": "406 Not Acceptable",
+      "subtitle": "Server cannot provide a response matching the requested format.",
+      "arg": "406"
+    },
+    {
+      "title": "407 Proxy Authentication Required",
+      "subtitle": "Authentication with the proxy is required.",
+      "arg": "407"
+    },
+    {
+      "title": "408 Request Timeout",
+      "subtitle": "Server timed out while waiting for the request.",
+      "arg": "408"
+    },
+    {
+      "title": "409 Conflict",
+      "subtitle": "Request conflicts with the current state of the resource.",
+      "arg": "409"
+    },
+    {
+      "title": "410 Gone",
+      "subtitle": "Resource has been permanently removed.",
+      "arg": "410"
+    },
+    {
+      "title": "411 Length Required",
+      "subtitle": "Request must include a valid Content-Length header.",
+      "arg": "411"
+    },
+    {
+      "title": "412 Precondition Failed",
+      "subtitle": "One or more request preconditions were not satisfied.",
+      "arg": "412"
+    },
+    {
+      "title": "413 Payload Too Large",
+      "subtitle": "Request body is larger than the server allows.",
+      "arg": "413"
+    },
+    {
+      "title": "414 URI Too Long",
+      "subtitle": "Requested URL is longer than the server can process.",
+      "arg": "414"
+    },
+    {
+      "title": "415 Unsupported Media Type",
+      "subtitle": "Request format or media type is not supported.",
+      "arg": "415"
+    },
+    {
+      "title": "416 Range Not Satisfiable",
+      "subtitle": "Requested resource range cannot be provided.",
+      "arg": "416"
+    },
+    {
+      "title": "417 Expectation Failed",
+      "subtitle": "Server cannot satisfy the request's Expect header.",
+      "arg": "417"
+    },
+    {
+      "title": "418 I'm a Teapot",
+      "subtitle": "April Fools status code indicating the server is a teapot.",
+      "arg": "418"
+    },
+    {
+      "title": "419 Page Expired (Laravel)",
+      "subtitle": "Laravel-specific response commonly used for an expired session or CSRF token.",
+      "arg": "419"
+    },
+    {
+      "title": "420 Page Expired (Spring Framework)",
+      "subtitle": "Framework-specific status code; meaning depends on the implementation.",
+      "arg": "420"
+    },
+    {
+      "title": "421 Misdirected Request",
+      "subtitle": "Request was sent to a server that cannot produce a response.",
+      "arg": "421"
+    },
+    {
+      "title": "422 Unprocessable Entity",
+      "subtitle": "Request is valid but contains semantic or validation errors.",
+      "arg": "422"
+    },
+    {
+      "title": "423 Locked",
+      "subtitle": "Resource is locked and cannot currently be modified.",
+      "arg": "423"
+    },
+    {
+      "title": "424 Failed Dependency",
+      "subtitle": "Request failed because a related operation failed.",
+      "arg": "424"
+    },
+    {
+      "title": "425 Too Early",
+      "subtitle": "Server is unwilling to process a request that may be replayed.",
+      "arg": "425"
+    },
+    {
+      "title": "426 Upgrade Required",
+      "subtitle": "Client must switch to a different protocol.",
+      "arg": "426"
+    },
+    {
+      "title": "428 Precondition Required",
+      "subtitle": "Server requires a conditional request to prevent conflicts.",
+      "arg": "428"
+    },
+    {
+      "title": "429 Too Many Requests",
+      "subtitle": "Client has sent too many requests in a given period.",
+      "arg": "429"
+    },
+    {
+      "title": "430 Request Header Fields Too Large (Shopify)",
+      "subtitle": "Shopify-specific status indicating oversized request headers.",
+      "arg": "430"
+    },
+    {
+      "title": "431 Request Header Fields Too Large",
+      "subtitle": "Request headers are too large for the server to process.",
+      "arg": "431"
+    },
+    {
+      "title": "450 Blocked by Windows Parental Controls (Microsoft)",
+      "subtitle": "Microsoft-specific status indicating content was blocked by parental controls.",
+      "arg": "450"
+    },
+    {
+      "title": "451 Unavailable For Legal Reasons",
+      "subtitle": "Resource is unavailable because of legal restrictions.",
+      "arg": "451"
+    },
+    {
+      "title": "500 Internal Server Error",
+      "subtitle": "Server encountered an unexpected error.",
+      "arg": "500"
+    },
+    {
+      "title": "501 Not Implemented",
+      "subtitle": "Server does not support the functionality required.",
+      "arg": "501"
+    },
+    {
+      "title": "502 Bad Gateway",
+      "subtitle": "Gateway received an invalid response from an upstream server.",
+      "arg": "502"
+    },
+    {
+      "title": "503 Service Unavailable",
+      "subtitle": "Server is temporarily unable to handle the request.",
+      "arg": "503"
+    },
+    {
+      "title": "504 Gateway Timeout",
+      "subtitle": "Gateway did not receive a timely upstream response.",
+      "arg": "504"
+    },
+    {
+      "title": "505 HTTP Version Not Supported",
+      "subtitle": "Server does not support the HTTP version used.",
+      "arg": "505"
+    },
+    {
+      "title": "506 Variant Also Negotiates",
+      "subtitle": "Server configuration causes a circular content-negotiation reference.",
+      "arg": "506"
+    },
+    {
+      "title": "507 Insufficient Storage",
+      "subtitle": "Server cannot store the representation needed to complete the request.",
+      "arg": "507"
+    },
+    {
+      "title": "508 Loop Detected",
+      "subtitle": "Server detected an infinite loop while processing the request.",
+      "arg": "508"
+    },
+    {
+      "title": "509 Bandwidth Limit Exceeded (Apache Web Server/cPanel)",
+      "subtitle": "Server-specific status indicating the bandwidth limit was exceeded.",
+      "arg": "509"
+    },
+    {
+      "title": "510 Not Extended",
+      "subtitle": "Further extensions to the request are required.",
+      "arg": "510"
+    },
+    {
+      "title": "511 Network Authentication Required",
+      "subtitle": "Client must authenticate with the network before accessing the resource.",
+      "arg": "511"
+    }
+    ]
+  })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>HTTP Lookup</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FEB552C9-211E-42CC-824B-3DFF7E151831</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9C6AE0A0-72C9-4A01-88BA-89919BC9EE22</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://http.cat/{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>46E7215A-CB22-4C55-A2FD-3242D48D0C25</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## HTTP Lookup
+
+Look up HTTP status codes and their docs via the `http` keyword.
+
+- &lt;kbd&gt;⏎&lt;/kbd&gt;: View the code details on `MDN Web Docs`.
+- &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;⏎&lt;/kbd&gt;: View the code meme on `HTTP Cats`.
+
+---
+
+⭐ If you find it useful, give it a [star on GitHub](https://github.com/iAli/http-lookup-workflow)</string>
+	<key>uidata</key>
+	<dict>
+		<key>46E7215A-CB22-4C55-A2FD-3242D48D0C25</key>
+		<dict>
+			<key>xpos</key>
+			<real>285</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>9C6AE0A0-72C9-4A01-88BA-89919BC9EE22</key>
+		<dict>
+			<key>xpos</key>
+			<real>285</real>
+			<key>ypos</key>
+			<real>25</real>
+		</dict>
+		<key>FEB552C9-211E-42CC-824B-3DFF7E151831</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>25</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>http</string>
+				<key>placeholder</key>
+				<string>http</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>26.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/iAli/http-lookup-workflow</string>
+</dict>
+</plist>
